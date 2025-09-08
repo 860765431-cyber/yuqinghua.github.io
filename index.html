@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2566">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="zh"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;我的摄影作品集&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* 基本样式 */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #fff; color: #333; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>header { background: #fff; padding: 10px; text-align: right; border-bottom: 1px solid #ddd; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>nav a { margin: 0 10px; text-decoration: none; color: #333; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>section { padding: 40px; text-align: center; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>h1, h2 { margin-bottom: 20px; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.shop-link { color: orange; font-weight: bold; text-decoration: none; }</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* 图像比较滑块样式（CSS-only） */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.image-compare {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--splitter-color: #ccc; /* 分隔线颜色 */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--splitter-size: 0.125rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--expand: 0.875rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--handle-size: calc(var(--expand) + var(--splitter-size));</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-width: 600px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 0 auto;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.image-compare span {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: block;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>top: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>left: calc(-1 * var(--expand));</p>
+<p class="p1"><span class="Apple-converted-space">            </span>bottom: calc(-1 * var(--expand));</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: calc(var(--expand) + 50% + var(--splitter-size) / 2);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-width: calc(var(--expand) + 100%);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>min-width: var(--handle-size);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding-left: var(--expand);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding-bottom: var(--expand);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: linear-gradient(135deg, transparent 0, transparent 50%, var(--splitter-color) 50%, var(--splitter-color)) 100% 100% / var(--handle-size) var(--handle-size) no-repeat;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>resize: horizontal;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>overflow: hidden;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.image-compare img {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: block;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>user-select: none;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.image-compare &gt; img {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: auto;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.image-compare span::after {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>content: "";</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: block;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>top: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>right: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>bottom: var(--expand);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-right: var(--splitter-size) solid var(--splitter-color);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* 辅助动画（可选） */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>@keyframes pingpong {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>0%, 100% { width: calc(var(--expand) + 50% + var(--splitter-size) / 2); }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>75% { width: var(--handle-size); }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>25% { width: calc(var(--expand) + 100%); }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.image-compare:focus span {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-image: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>animation: pingpong 5s linear infinite;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>resize: none;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* 画廊样式 */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.gallery { display: flex; flex-wrap: wrap; justify-content: center; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.gallery img { margin: 10px; width: 300px; height: auto; border: 1px solid #ddd; }</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* 摄影师部分 */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.photographer { display: flex; justify-content: center; align-items: center; margin: 20px; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.photographer img { width: 400px; margin-right: 20px; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.photographer div { text-align: left; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;header&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;nav&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;a href="#"&gt;主页&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;a href="#"&gt;商店&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;a href="#"&gt;作品&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;a href="#"&gt;博客&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/nav&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/header&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="lightroom"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h1&gt;Lightroom 调色预设&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;只需一个预设&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;瞬间的照片升级提升质感&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="image-compare"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;img src="https://example.com/before-couple.jpg" alt="Before"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;img src="https://example.com/after-couple.jpg" alt="After"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="#" class="shop-link"&gt;SHOP PRESETS →&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="model"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="image-compare"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;img src="https://example.com/before-model.jpg" alt="Before"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;img src="https://example.com/after-model.jpg" alt="After"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2&gt;模特调色预设&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;无需教程不用直方图的颜色？&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;你可以用此预设直接调&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="#" class="shop-link"&gt;SHOP LUTS →&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="jason"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h1&gt;JJason自由摄影师&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="photographer"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;img src="https://example.com/jason-photo.jpg" alt="Jason"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2&gt;我是Jason&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;一名自由摄影师&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="gallery"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;img src="https://example.com/cloud-before.jpg" alt="云图Before"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;img src="https://example.com/cloud-after.jpg" alt="云图After"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;footer&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;&amp;copy; 2025 你的摄影作品集&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/footer&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
